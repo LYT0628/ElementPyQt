@@ -1,0 +1,61 @@
+*[color="primary"] {
+    background-color: rgb(13, 110, 253);
+}
+*[color="secondary"] {
+    background-color: rgb(108, 117, 125);
+}
+*[color="success"] {
+    background-color: rgb(25, 135, 84);
+}
+*[color="danger"] {
+    background-color: rgb(220, 53, 69);
+}
+*[color="info"] {
+    background-color: rgb(13, 202, 240);
+}
+*[color="warning"] {
+background-color:rgb(255, 193, 7);
+}
+*[color="dark"] {
+    background-color: rgb(33, 37, 41);
+}
+
+QPushButton {
+    background-color: rgb(248, 249, 250);
+    width: 100px;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 6px;
+    
+}
+
+QPushButton:hover[color="primary"] {
+    background-color: rgb(11, 94, 215);
+}
+QPushButton:hover[color="secondary"] {
+    background-color: rgb(92, 99, 106);
+}
+QPushButton:hover[color="success"] {
+    background-color: rgb(21, 115, 71);
+}
+QPushButton:hover[color="danger"] {
+    background-color: rgb(187, 45, 59);
+}
+QPushButton:hover[color="info"] {
+    background-color: rgb(49, 210, 242);
+}
+QPushButton:hover[color="warning"] {
+    background-color: rgb(255, 202, 44);
+}
+QPushButton:hover[color="dark"] {
+    background-color: rgb(66, 70, 73);
+}
+QPushButton:hover {
+    background-color: rgb(211, 212, 213);
+}
+
+
+
+
+
+
