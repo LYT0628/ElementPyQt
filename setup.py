@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='EPyQt',
-    packages=['EPyQt', 'EPyQt.EWidgets','EpyQt.EBootStrap'],
+    packages=['EPyQt', 'EPyQt.EWidgets','EpyQt.EStyle'],
     author='lyt0628',
     author_email='lyt.0628@qq.com',
     url='http://lyt0628.icu',

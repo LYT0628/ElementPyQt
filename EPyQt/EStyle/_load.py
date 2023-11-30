@@ -1,11 +1,11 @@
 import os.path as op
+from EPyQt.EStyle import EQss
 
-from EPyQt import EUtils
 
 basedir = op.dirname(__file__)
 
 
-def load():
+def load_bs_style():
     with open(op.join(basedir, 'bootstrap.qss')) as f:
         qss = f.read()
-    return EUtils.toCSS(qss)
+    return EQss.toCSS(qss)
