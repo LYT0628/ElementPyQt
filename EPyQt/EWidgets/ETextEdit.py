@@ -11,11 +11,15 @@ from PyQt6.QtGui import (
     QPaintEvent,
     QColor,
     QResizeEvent,
+    QTextCursor,
+    QTextCharFormat,
+    QTextFormat
 )
 from PyQt6.QtWidgets import (
     QPlainTextEdit,
     QWidget,
-    QApplication
+    QApplication,
+    QTextEdit,
 )
 
 
@@ -26,7 +30,8 @@ class ETextEdit(QPlainTextEdit):
         super().__init__()
 
         self._lineNumberArea = LineNumberArea(self)
-        # self.cursorPositionChanged.connect(self.highlightCurrentLine)
+        self.cursorPositionChanged.connect(self.highlightCurrentLine)
+        self.highlightCurrentLine()
 
     # 计算行号(blockCount)的长度,
     # 这种数据得有唯一的可靠数据来源才行
@@ -34,6 +39,27 @@ class ETextEdit(QPlainTextEdit):
     def resizeEvent(self, ev: QResizeEvent | None) -> None:
         super().resizeEvent(ev)
         self.resize_.emit(self.contentsRect())
+
+    def highlightCurrentLine(self):
+        selection = QTextEdit.ExtraSelection()
+        selection.format.setBackground(Qt.GlobalColor.yellow)
+        selection.format.setProperty(QTextFormat.Property.FullWidthSelection, True)
+
+        selection.cursor = self.textCursor()
+        selection.cursor.clearSelection()
+        self.setExtraSelections([selection])
+
+        # cursor = self.textCursor()
+        # # selections = QPlainTextEdit.extraSelections()
+        # # selection = QTextEdit.ExtraSelection()
+        # cursor.movePosition(QTextCursor.MoveOperation.Down,
+        #                     QTextCursor.MoveMode.MoveAnchor,
+        #                     cursor.blockNumber())
+        # cursor.movePosition(QTextCursor.MoveOperation.EndOfLine,
+        #                     QTextCursor.MoveMode.KeepAnchor)
+        # format = QTextCharFormat()
+        # format.setBackground(Qt.GlobalColor.gray)
+        # cursor.setCharFormat(format)
 
 
 class LineNumberArea(QWidget):
@@ -115,5 +141,6 @@ class LineNumberArea(QWidget):
 if __name__ == "__main__":
     app = QApplication([])
     w = ETextEdit()
+    w.setFixedSize(600, 400)
     w.show()
     app.exec()
