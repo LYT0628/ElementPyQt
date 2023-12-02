@@ -1,4 +1,4 @@
-from EPyQt.EStyle._load import  load_bs_style
+from EPyQt.EStyle._load import  load_boot_strap
 __all__ = [
-    load_bs_style,
+    load_boot_strap,
 ]

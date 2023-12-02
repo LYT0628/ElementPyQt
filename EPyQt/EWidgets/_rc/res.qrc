@@ -1,0 +1,10 @@
+<RCC>
+        <qresource prefix="/epyqt">
+            <file>icon/question.svg</file>
+            <file>icon/close.svg</file>
+            <file>icon/minimize.svg</file>
+            <file>icon/maximize-1.svg</file>
+            <file>icon/maximize-2.svg</file>
+            <file>icon/logo.svg</file>
+        </qresource>
+</RCC>
