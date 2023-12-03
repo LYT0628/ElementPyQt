@@ -1,7 +1,17 @@
 from EPyQt.EWidgets.ETextEdit import ETextEdit
-from EPyQt.EWidgets.EBaseFramelessWindow import EFramelessWindow, ETitleBar
+from EPyQt.EWidgets.EShell import EShell
+from EPyQt.EWidgets.EWindow import (
+    EDefaultWindow,
+    EDefaultTitleBar,
+    EAbstractTitleBar,
+    EAbstractFramelessWindow,
+)
+
 __all__ = [
     ETextEdit,
-    EFramelessWindow,
-    ETitleBar
+    EDefaultWindow,
+    EDefaultTitleBar,
+    EAbstractTitleBar,
+    EAbstractFramelessWindow,
+    EShell
 ]

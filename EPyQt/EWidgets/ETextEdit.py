@@ -138,9 +138,3 @@ class LineNumberArea(QWidget):
         self.setGeometry(rect)
 
 
-if __name__ == "__main__":
-    app = QApplication([])
-    w = ETextEdit()
-    w.setFixedSize(600, 400)
-    w.show()
-    app.exec()

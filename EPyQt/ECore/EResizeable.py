@@ -93,7 +93,7 @@ class EWindowResizable(EResizable):
             strategy.markPosition(ev.pos(), self)
 
 
-class ResizeStrategy:
+class EResizeStrategy:
 
     @abstractmethod
     def vary(self) -> (int, int, int, int):
@@ -112,7 +112,7 @@ class ResizeStrategy:
         pass
 
 
-class LeftTopResizeStrategy(ResizeStrategy):
+class LeftTopResizeStrategy(EResizeStrategy):
 
     def markPosition(self, pos: QPoint, widget: QWidget) -> None:
         if not hasattr(widget, "_direction"):
@@ -137,7 +137,7 @@ class LeftTopResizeStrategy(ResizeStrategy):
         return 1, 1, -1, -1
 
 
-class RightTopResizeStrategy(ResizeStrategy):
+class RightTopResizeStrategy(EResizeStrategy):
     def cursor(self) -> Qt.CursorShape:
         return Qt.CursorShape.SizeFDiagCursor
 
@@ -160,7 +160,7 @@ class RightTopResizeStrategy(ResizeStrategy):
             widget.setCursor(Qt.CursorShape.SizeBDiagCursor)
 
 
-class LeftBottomResizeStrategy(ResizeStrategy):
+class LeftBottomResizeStrategy(EResizeStrategy):
     def cursor(self) -> Qt.CursorShape:
         return Qt.CursorShape.SizeFDiagCursor
 
@@ -184,7 +184,7 @@ class LeftBottomResizeStrategy(ResizeStrategy):
             widget.setCursor(Qt.CursorShape.SizeBDiagCursor)
 
 
-class RightBottomResizeStrategy(ResizeStrategy):
+class RightBottomResizeStrategy(EResizeStrategy):
     def cursor(self) -> Qt.CursorShape:
         return Qt.CursorShape.SizeFDiagCursor
 
@@ -208,7 +208,7 @@ class RightBottomResizeStrategy(ResizeStrategy):
             widget.setCursor(Qt.CursorShape.SizeFDiagCursor)
 
 
-class LeftResizeStrategy(ResizeStrategy):
+class LeftResizeStrategy(EResizeStrategy):
     def cursor(self) -> Qt.CursorShape:
         return Qt.CursorShape.SizeFDiagCursor
 
@@ -232,7 +232,7 @@ class LeftResizeStrategy(ResizeStrategy):
             widget.setCursor(Qt.CursorShape.SizeHorCursor)
 
 
-class RightResizeStrategy(ResizeStrategy):
+class RightResizeStrategy(EResizeStrategy):
     def cursor(self) -> Qt.CursorShape:
         return Qt.CursorShape.SizeFDiagCursor
 
@@ -256,7 +256,7 @@ class RightResizeStrategy(ResizeStrategy):
             widget.setCursor(Qt.CursorShape.SizeHorCursor)
 
 
-class TopResizeStrategy(ResizeStrategy):
+class TopResizeStrategy(EResizeStrategy):
     def cursor(self) -> Qt.CursorShape:
         return Qt.CursorShape.SizeFDiagCursor
 
@@ -280,7 +280,7 @@ class TopResizeStrategy(ResizeStrategy):
             widget.setCursor(Qt.CursorShape.SizeVerCursor)
 
 
-class BottomResizeStrategy(ResizeStrategy):
+class BottomResizeStrategy(EResizeStrategy):
     def cursor(self) -> Qt.CursorShape:
         return Qt.CursorShape.SizeFDiagCursor
 
